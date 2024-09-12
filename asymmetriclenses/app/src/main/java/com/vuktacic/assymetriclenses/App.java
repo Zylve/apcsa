@@ -3,12 +3,49 @@
  */
 package com.vuktacic.assymetriclenses;
 
+import java.util.Scanner;
+
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
+    private static Scanner scanner = new Scanner(System.in);
+    private static double bigRadius;
+    private static double smallRadius;
+    private static double offset;
+    private static double area;
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        System.out.print("Input radius 1: ");
+        try {
+            bigRadius = scanner.nextDouble();
+        } catch (Exception e) {
+            System.out.println("Invalid input");
+            return;
+        }
+
+        System.out.print("Input radius 2: ");
+        try {
+            smallRadius = scanner.nextDouble();
+        } catch (Exception e) {
+            System.out.println("Invalid input");
+            return;
+        }
+
+        System.out.print("Input offset d: ");
+        try {
+            offset = scanner.nextDouble();
+        } catch (Exception e) {
+            System.out.println("Invalid input");
+            return;
+        }
+
+        // First Expression
+        double firstExp = Math.pow(smallRadius, 2) * Math.acos(
+            (Math.pow(offset, 2) + Math.pow(smallRadius, 2) - Math.pow(bigRadius, 2)) 
+                / 2 * offset * smallRadius);
+
+        // Second Expression
+
+        // Third Expression
+
+        System.out.println(firstExp);
     }
 }

@@ -1,0 +1,62 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "gradle",
+			"id": "c:\\Users\\coolv\\Projects\\APCSA\\asymmetriclensesshadowJarasymmetriclenses",
+			"script": "shadowJar",
+			"description": "Create a combined JAR of project and runtime dependencies",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"project": "asymmetriclenses",
+			"buildFile": "C:\\Users\\coolv\\Projects\\APCSA\\asymmetriclenses\\build.gradle",
+			"rootProject": "asymmetriclenses",
+			"projectFolder": "c:\\Users\\coolv\\Projects\\APCSA\\asymmetriclenses",
+			"workspaceFolder": "c:\\Users\\coolv\\Projects\\APCSA\\asymmetriclenses",
+			"args": "",
+			"javaDebug": false,
+			"problemMatcher": [
+				"$gradle"
+			],
+			"label": "gradle: shadowJar"
+		},
+		{
+			"type": "gradle",
+			"id": "c:\\Users\\coolv\\Projects\\APCSA\\asymmetriclensesrunasymmetriclenses",
+			"script": "run",
+			"description": "Runs this project as a JVM application",
+			"group": "application",
+			"project": "asymmetriclenses",
+			"buildFile": "C:\\Users\\coolv\\Projects\\APCSA\\asymmetriclenses\\build.gradle",
+			"rootProject": "asymmetriclenses",
+			"projectFolder": "c:\\Users\\coolv\\Projects\\APCSA\\asymmetriclenses",
+			"workspaceFolder": "c:\\Users\\coolv\\Projects\\APCSA\\asymmetriclenses",
+			"args": "",
+			"javaDebug": false,
+			"problemMatcher": [
+				"$gradle"
+			],
+			"label": "gradle: run"
+		},
+		{
+			"type": "gradle",
+			"id": "c:\\Users\\coolv\\Projects\\APCSA\\asymmetriclensestestasymmetriclenses",
+			"script": "test",
+			"description": "Runs the test suite.",
+			"group": "verification",
+			"project": "asymmetriclenses",
+			"buildFile": "C:\\Users\\coolv\\Projects\\APCSA\\asymmetriclenses\\build.gradle",
+			"rootProject": "asymmetriclenses",
+			"projectFolder": "c:\\Users\\coolv\\Projects\\APCSA\\asymmetriclenses",
+			"workspaceFolder": "c:\\Users\\coolv\\Projects\\APCSA\\asymmetriclenses",
+			"args": "",
+			"javaDebug": false,
+			"problemMatcher": [
+				"$gradle"
+			],
+			"label": "gradle: test"
+		}
+	]
+}
