@@ -13,39 +13,68 @@ public class App {
     private static double area;
 
     public static void main(String[] args) {
+
         System.out.print("Input radius 1: ");
+
         try {
             bigRadius = scanner.nextDouble();
-        } catch (Exception e) {
+        } catch(Exception e) {
             System.out.println("Invalid input");
             return;
         }
 
         System.out.print("Input radius 2: ");
+
         try {
             smallRadius = scanner.nextDouble();
-        } catch (Exception e) {
+        } catch(Exception e) {
             System.out.println("Invalid input");
             return;
         }
 
         System.out.print("Input offset d: ");
+
         try {
             offset = scanner.nextDouble();
-        } catch (Exception e) {
+        } catch(Exception e) {
             System.out.println("Invalid input");
             return;
         }
 
-        // First Expression
+        if((bigRadius + smallRadius == offset) || (bigRadius - smallRadius == offset)) {
+            System.out.println("Lens with zero area");
+            return;
+        }
+
+        if((bigRadius + smallRadius < offset) || (bigRadius - smallRadius > offset)) {
+            System.out.println("No lens exists");
+            return;
+        }
+
         double firstExp = Math.pow(smallRadius, 2) * Math.acos(
-            (Math.pow(offset, 2) + Math.pow(smallRadius, 2) - Math.pow(bigRadius, 2)) 
-                / 2 * offset * smallRadius);
+            (Math.pow(offset, 2) + Math.pow(smallRadius, 2) - Math.pow(bigRadius, 2))
+                / (2 * offset * smallRadius)
+        );
 
         // Second Expression
+        double secondExp = Math.pow(bigRadius, 2) * Math.acos(
+            (Math.pow(offset, 2) + Math.pow(bigRadius, 2) - Math.pow(smallRadius, 2))
+                / (2 * offset * bigRadius)
+        );
 
         // Third Expression
+        double thirdExp = 0.5 * Math.sqrt(
+            (-offset + smallRadius + bigRadius)
+                * (offset + smallRadius - bigRadius)
+                * (offset - smallRadius + bigRadius)
+                * (offset + smallRadius + bigRadius)
+        );
 
-        System.out.println(firstExp);
+        area = firstExp + secondExp - thirdExp;
+
+        // # of zeroes = # of decimals rounded to. Looks like it accounts for rounding up too.
+        area = Math.round(area * 10000.0) / 10000.0;
+
+        System.out.println(area);
     }
 }
