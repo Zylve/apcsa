@@ -14,30 +14,12 @@
 			"rootProject": "practicalone",
 			"projectFolder": "c:\\Users\\coolv\\Projects\\APCSA\\practicalone",
 			"workspaceFolder": "c:\\Users\\coolv\\Projects\\APCSA\\practicalone",
-			"args": "--warning-mode all",
-			"javaDebug": false,
-			"problemMatcher": [
-				"$gradle"
-			],
-			"label": "gradle: shadowJar"
-		},
-		{
-			"type": "gradle",
-			"id": "c:\\Users\\coolv\\Projects\\APCSA\\practicalonerunShadowpracticalone",
-			"script": "runShadow",
-			"description": "Runs this project as a JVM application using the shadow jar",
-			"group": "application",
-			"project": "practicalone",
-			"buildFile": "C:\\Users\\coolv\\Projects\\APCSA\\practicalone\\build.gradle",
-			"rootProject": "practicalone",
-			"projectFolder": "c:\\Users\\coolv\\Projects\\APCSA\\practicalone",
-			"workspaceFolder": "c:\\Users\\coolv\\Projects\\APCSA\\practicalone",
 			"args": "",
 			"javaDebug": false,
 			"problemMatcher": [
 				"$gradle"
 			],
-			"label": "gradle: runShadow"
+			"label": "gradle: shadowJar"
 		}
 	]
 }
