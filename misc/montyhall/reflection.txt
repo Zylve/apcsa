@@ -1,0 +1,34 @@
+1. Simulator Results (50 Iterations per run):
+#  | No Switch Winning % | Switch Winning % |
+1. |        34.0%        |       70.0%      |
+2. |        46.0%        |       68.0%      | // Outlier
+3. |        32.0%        |       62.0%      |
+4. |        34.0%        |       64.0%      |
+5. |        32.0%        |       62.0%      |
+
+2. What part(s) of the project did you find easy? What part(s) of the project did you find
+challenging? How did you overcome the challenges?
+
+I found it very easy to convert the iteractive program into a simulator program. I found it quite
+difficult to work out the logic of the monty hall problem but I was able to use the debugger to
+figure out how my code is working under the hood and correct any issues.
+
+3. Who did you collaborate with for this project (if any)? What did you help each other
+with?
+
+I did not collaborate with anybody.
+
+Evaluation
+Program Specifications
+Part 1
+• Program prompts user input and prints all required
+information // Prompts Input and prints information (including the door number that the user will switch to).
+• Program checks user input and handles invalid input // Program tells user if there is incorrect input and prompts them to restart.
+• Program implements the Monty Hall problem correctly // Monty Hall problem is implemented correctly 👍.
+Part 2
+• Program uses the loop correctly to run 100 trials // Runs 100 trials, 50 for switching, 50 for not switching
+• Program implements the Monty Hall problem correctly // Implemented correctly.
+• Program displays the correct winning percentages // Displays winning percentages in a readable format.
+Programming Practice
+• Use of easy-to-understand variable names // Variable names are not ambiguous.
+• Clear comments in the program // Comments available
