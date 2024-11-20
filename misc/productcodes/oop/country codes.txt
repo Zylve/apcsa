@@ -1,0 +1,115 @@
+France 379
+Bulgaria 380
+Slovenija 383
+Croatia 385
+Bosnia 387
+Montenegro 389
+Germany 440
+Japan 499
+Russia 469
+Kyrgyzstan 470
+Taipei 471
+Estonia 474
+Latvia 475
+Azerbaijan 476
+Lithuania 477
+Uzbeckistan 478
+Sri Lanka 479
+Philippines 480
+Belarus 481
+Ukrain 482
+Turkmenistan 483
+Moldova 484
+Armenia 485
+Geogia 486
+Kazakstan 487
+Tajikstan 488
+Hong Kong 489
+UK 509
+Greece 521
+Lebanon 528
+Cyprus 529
+Albania 530
+Macedonia 531
+Malta 535
+Ireland 539
+Belgium 540
+Luxembourg 549
+Portugal 560
+Iceland 569
+Denmark 579
+Poland 590
+Romania 594
+Hungary 599
+South Africa 601
+Ghana 603
+Senegal 604
+Oman 607
+Bahrain 608
+Mauritius 609
+Morocco 611
+Algeria 613
+Nigeria 615
+Kenya 616
+Cameroon 617
+Cote d'Ivoire 618
+Tunisia 619
+Tanzania 620
+Syria 621
+Egypt 622
+Libya 624
+Jordan 625
+Iran 626
+Kuwait 627
+Saudi Arabia 628
+Emirates 629
+Qatar 630
+Namibia 631
+Finland 649
+China 699
+Norway 709
+Israel 729
+Sweden 739
+Guatemala 740
+El Salvador 741
+Honduras 742
+Nicaragua 743
+Costa Rica 744
+Panama 745
+Dominican Republic 746
+Mexico 750
+Venezuela 759
+Switzerland 769
+Colombia 771
+Uruguay 773
+Peru 775
+Bolivia 777
+Argentina 779
+Chile 780
+Paraguay 784
+Ecuador 786
+Brasil 790
+Italy 839
+Spain 849
+Cuba 850
+Slovakia 858
+Czech 859
+Serbia 860
+Mongolia 865
+North Korea 867
+Turkey 869
+Netherlands 879
+South Korea 881
+Myanmar 883
+Cambodia 884
+Thailand 885
+Singapore 888
+India 890
+Vietnam 893
+Pakistan 896
+Indonesia 899
+Austria 919
+Australia 939
+New Zealand 949
+Malaysia 955
+Macau, China 958

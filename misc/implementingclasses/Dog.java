@@ -7,6 +7,10 @@ public class Dog {
         this.weight = weight;
     }
 
+    public String getName() {
+        return this.name;
+    }
+
     public double getWeight() {
         return this.weight;
     }
@@ -20,6 +24,6 @@ public class Dog {
     }
 
     public void speak() {
-        System.out.println("Bark!");
+        System.out.println(this.name + " says Bark!");
     }
 }

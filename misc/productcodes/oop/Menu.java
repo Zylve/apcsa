@@ -5,6 +5,8 @@ public class Menu {
     // precondition : none
     // postcondition: executes the menu algorithm
     public void runMenu() {
+        CountryHelper.loadCountries();
+
         while(true) {
             System.out.print(
                 "1. Generate a UPC code.\n"
@@ -54,27 +56,31 @@ public class Menu {
                 break;
 
             case 1:
-                System.out.print("Random UPC code: " + new Code("UPC").getCode() + "\n\n");
+                System.out.print("\nRandom UPC code: " + new Code("UPC").getCode() + "\n\n");
                 break;
 
             case 2:
-                System.out.print("Random EAN code: " + new Code("EAN").getCode() + "\n\n");
+                System.out.print("\nRandom EAN code: " + new Code("EAN").getCode() + "\n\n");
                 break;
 
             case 3:
                 Code upcInput = new Code(this.enterCode(12), "UPC");
 
+                System.out.println();
                 System.out.println(upcInput.isValid() ? "The UPC code is valid." : "The UPC code is invalid.\n");
+                System.out.println();
                 break;
 
             case 4:
                 Code eanInput = new Code(this.enterCode(13), "EAN");
 
+                System.out.println();
                 System.out.println(eanInput.isValid() ? "The EAN code is valid." : "The EAN code is invalid.\n");
+                System.out.println();
                 break;
 
             default:
-                System.out.println("Something went wrong.");
+                System.out.println("\nSomething went wrong.\n");
         }
     }
 

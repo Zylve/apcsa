@@ -48,7 +48,7 @@ public class Code {
             if(type.equals("0") || type.equals("2") || type.equals("3") || type.equals("5")) {
                 return type;
             } else {
-                System.out.println("Invalid input. Please enter a number from the list.");
+                System.out.println("\nInvalid input. Please enter a number from the list.\n");
             }
         }
     }
