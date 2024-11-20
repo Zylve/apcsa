@@ -21,23 +21,6 @@ public class Menu {
         }
     }
 
-    // precondition : none
-    // postcondition: shows a banner on the console
-    private void printHeader() {
-    }
-
-    // precondition : none
-    // postcondition: shows a boxed UPC or EAN code on the console
-    // the box adjusts to the size of the code
-    private void printCode(String code) {
-    }
-
-    // precondition : none
-    // postcondition: shows the menu on the console
-    private void printMenu() {
-    }
-
-
     // precondition : given the lowest and highest menu item
     // postcondition: user is prompted to enter a menu choice,
     // returns a choice i, lowest <= i <= highest
