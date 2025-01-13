@@ -185,8 +185,28 @@ public class MagicSquareUtil {
         return square;
     }
 
+    // https://www.1728.org/magicsq3.htm
     private static int[][] generateSinglyEvenMagicSquare(int size) {
-        return populateSquare(size);
+        int[][] square = populateSquare(size);
+        int halfSize = size / 2;
+        int rightColumnWidth = (int)((size / 4.0) - 1.5);
+        int leftColumnWidth = halfSize / 2;
+        int shiftRow = (halfSize / 2) + 1;
+
+        int[][] subSquare = generateOddMagicSquare(halfSize);
+
+        for(int i = 0; i < halfSize; i++) {
+            for(int j = 0; j < halfSize; j++) {
+                square[i][j] = subSquare[i][j];
+                square[i + halfSize][j + halfSize] = subSquare[i][j] + (halfSize * halfSize);
+                square[i][j + halfSize] = subSquare[i][j] + (2 * halfSize * halfSize);
+                square[i + halfSize][j] = subSquare[i][j] + (3 * halfSize * halfSize);
+            }
+        }
+
+        // Shift right columns
+
+        return square;
     }
 
     private static int[][] populateSquare(int size) {

@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 public class MSDriver {
     public static void main(String[] args) {
         // int[][] square3 = {
@@ -30,7 +28,7 @@ public class MSDriver {
         // System.out.println(MagicSquareUtil.isMagicSquare(square3));
         // System.out.println(MagicSquareUtil.isMagicSquare(square5));
         // System.out.println(MagicSquareUtil.isMagicSquare(square8));
-        int[][] square = MagicSquareUtil.generateMagicSquare(32);
+        int[][] square = MagicSquareUtil.generateMagicSquare(14);
 
         for(int[] row : square) {
             System.out.print("{");
