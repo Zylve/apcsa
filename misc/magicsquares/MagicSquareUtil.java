@@ -1,5 +1,6 @@
 public class MagicSquareUtil {
-    private MagicSquareUtil() { }
+    private MagicSquareUtil() {
+    }
 
     private static int nValue = 1;
     private static int magicConstant = 1;
@@ -71,10 +72,12 @@ public class MagicSquareUtil {
     }
 
     public static int[][] generateMagicSquare(int size) {
-        if(size % 2 == 0) {
-            return populateSquare(size);
-        } else {
+        if(size % 2 == 1) {
             return generateOddMagicSquare(size);
+        } else if(size % 4 == 0) {
+            return generateDoublyEvenMagicSquare(size);
+        } else {
+            return generateSinglyEvenMagicSquare(size);
         }
     }
 
@@ -115,12 +118,75 @@ public class MagicSquareUtil {
             }
         }
 
+        return square;
+    }
+
+    // https://www.1728.org/magicsq2.htm - Third solution
+    private static int[][] generateDoublyEvenMagicSquare(int size) {
+        int[][] square = populateSquare(size);
+        // int rectangleLength = size / 2;
+        int rectangleWidth = size / 4;
+
+        // The corner boxes in the square.
+        // x1, y1, x2, y2, inclusive
+        int[] tlBoxBounds = { 0, 0, rectangleWidth - 1, rectangleWidth - 1 };
+        int[] trBoxBounds = { size - rectangleWidth, 0, size - 1, rectangleWidth - 1 };
+        int[] blBoxBounds = { 0, size - rectangleWidth, rectangleWidth - 1, size - 1 };
+        int[] brBoxBounds = { size - rectangleWidth, size - rectangleWidth, size - 1, size - 1 };
+
+        int x = 0;
+        int y = 0;
+
+        // First pass wtf is this bounds checking - fifth bound is the middle of the box.
+        for(int i = 1; i <= size * size; i++) {
+            if((x >= tlBoxBounds[0] && x <= tlBoxBounds[2]) && (y >= tlBoxBounds[1] && y <= tlBoxBounds[3])
+                || (x >= trBoxBounds[0] && x <= trBoxBounds[2]) && (y >= trBoxBounds[1] && y <= trBoxBounds[3])
+                || (x >= blBoxBounds[0] && x <= blBoxBounds[2]) && (y >= blBoxBounds[1] && y <= blBoxBounds[3])
+                || (x >= brBoxBounds[0] && x <= brBoxBounds[2]) && (y >= brBoxBounds[1] && y <= brBoxBounds[3])
+                || (x >= rectangleWidth && x < size - rectangleWidth) && (y >= rectangleWidth && y < size - rectangleWidth)) {
+
+                // Do nothing
+            } else {
+                square[y][x] = i;
+            }
+
+            if(x == size - 1) {
+                x = 0;
+                y++;
+            } else {
+                x++;
+            }
+        }
+
+        x = 0;
+        y = 0;
+
+        // Second pass
+        for(int i = size * size; i >= 1; i--) {
+            if((x >= tlBoxBounds[0] && x <= tlBoxBounds[2]) && (y >= tlBoxBounds[1] && y <= tlBoxBounds[3])
+                || (x >= trBoxBounds[0] && x <= trBoxBounds[2]) && (y >= trBoxBounds[1] && y <= trBoxBounds[3])
+                || (x >= blBoxBounds[0] && x <= blBoxBounds[2]) && (y >= blBoxBounds[1] && y <= blBoxBounds[3])
+                || (x >= brBoxBounds[0] && x <= brBoxBounds[2]) && (y >= brBoxBounds[1] && y <= brBoxBounds[3])
+                || (x >= rectangleWidth && x < size - rectangleWidth) && (y >= rectangleWidth && y < size - rectangleWidth)) {
+
+                square[y][x] = i;
+            } else {
+                // Do nothing
+            }
+
+            if(x == size - 1) {
+                x = 0;
+                y++;
+            } else {
+                x++;
+            }
+        }
 
         return square;
     }
 
-    private static int[][] generateEvenMagicSquare(int size) {
-        return new int[0][0];
+    private static int[][] generateSinglyEvenMagicSquare(int size) {
+        return populateSquare(size);
     }
 
     private static int[][] populateSquare(int size) {
