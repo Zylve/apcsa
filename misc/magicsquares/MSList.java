@@ -51,17 +51,20 @@ public class MSList {
         // Remove invalid squares and get largest square
         for(int i = 0; i < list.size(); i++) {
             int[][] square = list.get(i);
-            int size = MagicSquareUtil.isMagicSquare(square);
+            int constant = MagicSquareUtil.isMagicSquare(square);
 
-            if(size == 0) {
+            if(constant == 0) {
                 list.remove(i);
                 i--;
             }
 
-            if(size > this.size) {
-                this.size = size;
+            if(square.length > this.size) {
+                this.size = square.length;
             }
         }
+
+        // Explicitly set size to 12
+        this.size = 12;
 
         // Remove duplicates
         for(int i = 0; i < list.size(); i++) {
@@ -75,6 +78,17 @@ public class MSList {
             }
         }
 
+        // Add missing squares
+        outer: for(int i = 3; i <= this.size; i++) {
+            for(int[][] square : list) {
+                if(square.length == i) {
+                    continue outer;
+                }
+            }
+
+            list.add(MagicSquareUtil.generateMagicSquare(i));
+        }
+
         // Bubble sort
         for(int i = 0; i < list.size() - 1; i++) {
             if(list.get(i).length > list.get(i + 1).length) {
@@ -84,15 +98,6 @@ public class MSList {
                 list.set(i, swap);
             }
         }
-
-        // // Fill in missing squares sequentially
-        // for(int i = 0; i < size; i++) {
-        //     if(list.get(i).length > (i + 1)) {
-        //         int[][] newSquare = MagicSquareUtil.generateMagicSquare(i + 1);
-
-        //         list.add(i, newSquare);
-        //     }
-        // }
     }
 
     public void printList() {
@@ -106,8 +111,48 @@ public class MSList {
 
                 System.out.println("\b\b}");
             }
-            
+
             System.out.println(MagicSquareUtil.isMagicSquare(square));
+        }
+    }
+
+    public void writeList() {
+        try {
+            Files.deleteIfExists(Path.of("magicSquaresOutput.txt"));
+            Files.createFile(Path.of("magicSquaresOutput.txt"));
+        } catch(Exception e) {
+            System.out.println("ruh roh");
+            e.printStackTrace();
+            System.exit(1);
+        }
+
+        for(int[][] square : list) {
+            try {
+                Files.writeString(
+                    Path.of("magicSquaresOutput.txt"), MagicSquareUtil.isMagicSquare(square) + "\n", java.nio.file.StandardOpenOption.APPEND
+                );
+            } catch(Exception e) {
+                e.printStackTrace();
+                System.exit(1);
+            }
+
+            for(int[] row : square) {
+                for(int i : row) {
+                    try {
+                        Files.writeString(Path.of("magicSquaresOutput.txt"), i + "\t", java.nio.file.StandardOpenOption.APPEND);
+                    } catch(Exception e) {
+                        e.printStackTrace();
+                        System.exit(1);
+                    }
+                }
+
+                try {
+                    Files.writeString(Path.of("magicSquaresOutput.txt"), "\n", java.nio.file.StandardOpenOption.APPEND);
+                } catch(Exception e) {
+                    e.printStackTrace();
+                    System.exit(1);
+                }
+            }
         }
     }
 }

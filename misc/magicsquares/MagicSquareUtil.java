@@ -185,13 +185,14 @@ public class MagicSquareUtil {
         return square;
     }
 
+    // /mnt/c/Users/vukta/Projects/APCSA/misc/magicsquares/MagicSquareUtil.java
     // https://www.1728.org/magicsq3.htm
     private static int[][] generateSinglyEvenMagicSquare(int size) {
         int[][] square = populateSquare(size);
         int halfSize = size / 2;
         int rightColumnWidth = (int)((size / 4.0) - 1.5);
         int leftColumnWidth = halfSize / 2;
-        int shiftRow = (halfSize / 2) + 1;
+        int shiftRow = (halfSize / 2);
 
         int[][] subSquare = generateOddMagicSquare(halfSize);
 
@@ -205,6 +206,34 @@ public class MagicSquareUtil {
         }
 
         // Shift right columns
+        for(int i = 0; i < halfSize; i++) {
+            for(int j = 0; j < rightColumnWidth; j++) {
+                int temp = square[i][size - j - 1];
+
+                square[i][size - j - 1] = square[halfSize + i][size - j - 1];
+                square[halfSize + i][size - j - 1] = temp;
+            }
+        }
+
+        // Shift left columns
+
+        for(int i = 0; i < halfSize; i++) {
+            for(int j = 0; j < leftColumnWidth; j++) {
+
+                if(i == shiftRow) {
+                    int temp = square[i][j + 1];
+
+                    square[i][j + 1] = square[halfSize + i][j + 1];
+                    square[halfSize + i][j + 1] = temp;
+
+                } else {
+                    int temp = square[i][j];
+
+                    square[i][j] = square[halfSize + i][j];
+                    square[halfSize + i][j] = temp;
+                }
+            }
+        }
 
         return square;
     }

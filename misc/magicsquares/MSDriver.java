@@ -28,23 +28,11 @@ public class MSDriver {
         // System.out.println(MagicSquareUtil.isMagicSquare(square3));
         // System.out.println(MagicSquareUtil.isMagicSquare(square5));
         // System.out.println(MagicSquareUtil.isMagicSquare(square8));
-        int[][] square = MagicSquareUtil.generateMagicSquare(14);
 
-        for(int[] row : square) {
-            System.out.print("{");
-
-            for(int i : row) {
-                System.out.print(i + ", ");
-            }
-
-            System.out.println("\b\b}");
-        }
-
-        System.out.println(MagicSquareUtil.isMagicSquare(square));
-
-        // MSList listAssignment = new MSList();
-        // listAssignment.readList();
-        // listAssignment.run();
-        // listAssignment.printList();
+        MSList listAssignment = new MSList();
+        listAssignment.readList();
+        listAssignment.run();
+        listAssignment.printList();
+        listAssignment.writeList();
     }
 }
